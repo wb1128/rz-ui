@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "jsx": "preserve",
+  },
+  "include": [
+    "src/**/*.*",
+    "src/shims-vue.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+  ],
+  "esModuleInterop": false,
+  "allowSyntheticDefaultImports": true,
+}
