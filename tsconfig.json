@@ -4,6 +4,7 @@
     "declaration": true,
     "declarationDir": "./dist/types",
     "jsx": "preserve",
+    "lib": ["es2016"],
   },
   "include": [
     "src/**/*.*",

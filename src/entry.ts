@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import RzButton from './button'
+import RzButton from './button/Button'
 
 // 单独导出组件
 export { RzButton }
