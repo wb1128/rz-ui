@@ -1,32 +1,35 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vite";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import Unocss from "./config/unocss";
+import { defineConfig } from 'vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import Unocss from './config/unocss'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
     rollupOptions: {
-      external: ["vue"],
+      external: ['vue'],
       output: {
         globals: {
-          vue: "Vue",
-        },
-      },
+          vue: 'Vue'
+        }
+      }
     },
-    minify: false,
+    minify: 'esbuild',
+    sourcemap: true, // source文件
+    brotliSize: true, // 压缩大小报告
+    cssCodeSplit: true, // 启用/禁用 CSS代码拆分
     lib: {
-      entry: "./src/entry.ts",
-      name: "RzUI",
-      fileName: "rz-ui",
+      entry: './src/entry.ts',
+      name: 'RzUI',
+      fileName: 'rz-ui',
       // 导出模块格式
-      formats: ["es", "umd", "iife"],
-    },
+      formats: ['es', 'umd', 'iife']
+    }
   },
   plugins: [
     vueJsx(),
     // 添加UnoCSS插件
-    Unocss(),
+    Unocss()
   ],
   test: {
     // enable jest-like global test APIs
@@ -36,7 +39,7 @@ export default defineConfig({
     environment: 'happy-dom',
     // 支持tsx组件
     testTransformMode: {
-      web: ['.jsx', '.tsx'],
-    },
+      web: ['.jsx', '.tsx']
+    }
   }
-});
+})
