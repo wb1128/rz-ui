@@ -22,10 +22,14 @@ jobs:
       - name: Build
         run: npm run build # cd packages/rz-ui-vue &&
       - name: 'Publish to the npm registry'
-        uses: primer/publish@3.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.RZ_UI_TOKEN }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
+        uses: JS-DevTools/npm-publish@v2
         with:
-          default_branch: 'publish'
-          dir: './'
+          token: ${{ secrets.RZ_UI_TOKEN }}
+      # - name: 'Publish to the npm registry'
+      #   uses: primer/publish@3.0.0
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_AUTH_TOKEN: ${{ secrets.RZ_UI_TOKEN }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
+      #   with:
+      #     default_branch: 'publish'
+      #     dir: './'
