@@ -16,11 +16,11 @@ jobs:
       - uses: actions/checkout@master
       - uses: pnpm/action-setup@v2.1.0
         with:
-          version: 6.31.0
+          version: 8.6.2
       - name: Install modules
         run: pnpm install
       - name: Build
-        run: cd packages/rz-ui-vue && npm run build
+        run: npm run build # cd packages/rz-ui-vue &&
       - name: 'Publish to the npm registry'
         uses: primer/publish@3.0.0
         env:
@@ -28,4 +28,4 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.RZ_UI_TOKEN }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
         with:
           default_branch: 'publish'
-          dir: 'packages/rz-ui-vue'
+          dir: './'
