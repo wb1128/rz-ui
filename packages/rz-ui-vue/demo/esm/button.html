@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,10 +8,10 @@
   <body>
     <h1>button IFFE</h1>
     <div id="app"></div>
-    <link rel="stylesheet" href="../../dist/style.css" />
+    <link rel="stylesheet" href="../../dist/entry.css" />
     <script type="module">
-      import { createApp } from "vue/dist/vue.esm-bundler.js";
-      import { RzButton } from "../../dist/rz-ui.mjs";
+      import { createApp } from 'vue/dist/vue.esm-bundler.js'
+      import { RzButton } from '../../dist/rz-ui.mjs'
 
       createApp({
         template: `
@@ -49,10 +49,10 @@
           <rz-button color="yellow" round plain icon="message"></rz-button>
           <rz-button color="red" round plain icon="delete"></rz-button>
         </div>
-          `,
+          `
       })
         .component(RzButton.name, RzButton)
-        .mount("#app");
+        .mount('#app')
     </script>
   </body>
 </html>

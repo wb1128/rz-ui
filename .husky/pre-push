@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+echo ====单元测试====
+cd packages/rz-ui-vue
 pnpm run test:run
