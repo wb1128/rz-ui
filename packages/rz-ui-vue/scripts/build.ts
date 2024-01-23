@@ -38,7 +38,7 @@ const buildAll = async () => {
       `{
           "name": "rz-ui-vue/${name}",
           "main": "index.umd.js",
-          "module": "index.umd.js",
+          "module": "index.umd.js"
         }`,
       `utf-8`
     )
