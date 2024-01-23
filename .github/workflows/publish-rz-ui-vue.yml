@@ -8,7 +8,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
 
-    name: 'publish npm'
+    name: "publish npm"
 
     environment: npm
 
@@ -20,11 +20,12 @@ jobs:
       - name: Install modules
         run: pnpm install
       - name: Build
-        run: npm run build # cd packages/rz-ui-vue &&
-      - name: 'Publish to the npm registry'
+        run: cd packages/rz-ui-vue && pnpm run build
+      - name: "Publish to the npm registry"
         uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.RZ_UI_TOKEN }}
+          package: packages/rz-ui-vue
       # - name: 'Publish to the npm registry'
       #   uses: primer/publish@3.0.0
       #   env:

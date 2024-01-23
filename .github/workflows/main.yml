@@ -19,4 +19,4 @@ jobs:
       - name: Install modules
         run: pnpm install
       - name: Run Test
-        run: pnpm run test:run
+        run: cd packages/rz-ui-vue && pnpm run test:run
