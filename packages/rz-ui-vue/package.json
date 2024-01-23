@@ -4,6 +4,7 @@
   "description": "",
   "main": "./dist/rz-ui.mjs",
   "module": "./dist/rz-ui.mjs",
+  "homepage": "https://rz-ui-docs.vercel.app/",
   "scripts": {
     "dev": "vite",
     "test": "vitest",
