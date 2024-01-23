@@ -92,6 +92,8 @@ importers:
         specifier: ^1.1.0
         version: registry.npmmirror.com/vitest@1.1.0(@types/node@20.10.6)(happy-dom@12.10.3)
 
+  packages/rz-ui-vue/dist/Button: {}
+
 packages:
 
   registry.npmmirror.com/@aashutoshrathi/word-wrap@1.2.6:
