@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../dist/entry.css" />
     <script type="module">
       import { createApp } from 'vue/dist/vue.esm-bundler.js'
-      import { RzButton } from '../../dist/rz-ui.mjs'
+      import { Button } from '../../dist/rz-ui.mjs'
 
       createApp({
         template: `
@@ -51,7 +51,7 @@
         </div>
           `
       })
-        .component(RzButton.name, RzButton)
+        .component(Button.name, Button)
         .mount('#app')
     </script>
   </body>
