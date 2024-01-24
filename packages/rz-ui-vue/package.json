@@ -9,6 +9,7 @@
     "dev": "vite",
     "test": "vitest",
     "test:run": "vitest run",
+    "coverage": "vitest run --coverage",
     "lint": "eslint --fix --ext .ts,.vue,.tsx src --format=pretty",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
     "build": "pnpm build:components",
@@ -24,6 +25,8 @@
   "devDependencies": {
     "@iconify-json/ic": "^1.1.17",
     "@rushstack/eslint-patch": "^1.6.1",
+    "@vitest/coverage-istanbul": "^1.2.1",
+    "@vitest/coverage-v8": "^1.2.1",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/test-utils": "^2.4.3",

@@ -1,5 +1,4 @@
 {
-  "name": "rz-ui-vue",
   "description": "",
   "scripts": {
     "preinstall": "npx only-allow pnpm"

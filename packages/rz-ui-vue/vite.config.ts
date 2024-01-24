@@ -40,6 +40,10 @@ export const config = {
     // 支持tsx组件
     testTransformMode: {
       web: ['.jsx', '.tsx']
+    },
+    coverage: {
+      provider: 'istanbul', // or 'c8',
+      reporter: ['text', 'json', 'html']
     }
   }
 }
