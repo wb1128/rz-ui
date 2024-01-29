@@ -1,0 +1,11 @@
+export * from './types/entry'
+import RzUI from './types/entry'
+export default RzUI
+
+declare module 'vue' {
+    export interface GlobalComponents {
+        {{#each components}}
+            {{name}}: typeof import("./types/entry").{{component}},
+        {{/each}}
+    }
+}

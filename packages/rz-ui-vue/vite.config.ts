@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 import { UserConfig, defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import dts from 'vite-plugin-dts'
 import Unocss from './config/unocss'
 
 export const config = {
@@ -29,7 +30,12 @@ export const config = {
   plugins: [
     vueJsx(),
     // 添加UnoCSS插件
-    Unocss()
+    Unocss(),
+    dts({
+      outDir: './dist/types',
+      insertTypesEntry: false, // 插入TS 入口
+      copyDtsFiles: true // 是否将源码里的 .d.ts 文件复制到 outputDir
+    })
   ],
   test: {
     // enable jest-like global test APIs

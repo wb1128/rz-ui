@@ -1,6 +1,7 @@
 import fs from 'fs-extra'
 import path from 'path'
 import { config } from '../vite.config'
+import { generateDTS } from './type'
 import { build, defineConfig, UserConfig } from 'vite'
 
 const buildAll = async () => {
@@ -11,6 +12,21 @@ const buildAll = async () => {
       configFile: false
     } as UserConfig)
   )
+
+  const baseOutDir = config.build.outDir
+  // 复制 Package.json 文件
+  const packageJson = require('../package.json')
+  packageJson.main = 'rz-ui.umd.js'
+  packageJson.module = 'rz-ui.mjs'
+  packageJson.types = 'rz-ui.d.ts'
+  fs.outputFile(path.resolve(baseOutDir, `package.json`), JSON.stringify(packageJson, null, 2))
+
+  // 拷贝 README.md文件
+  fs.copyFileSync(path.resolve('./README.md'), path.resolve(baseOutDir + '/README.md'))
+
+  // 生成配置DTS配置文件入口
+  generateDTS(path.resolve(config.build.outDir, `rz-ui.mjs`))
+
   const srcDir = path.resolve(__dirname, '../src/')
   const componentsDir = fs.readdirSync(srcDir).filter((name) => {
     // 只要目录不要文件，且里面包含index.ts
