@@ -1,9 +1,9 @@
 import fs from 'fs-extra'
 import path from 'path'
-import { config } from '../vite.config'
+import { config } from '../vite.config.mts'
 import { generateDTS } from './type'
 import { build, defineConfig, UserConfig } from 'vite'
-
+// import packageJson from '../package.json'
 const buildAll = async () => {
   // 全量打包
   await build(

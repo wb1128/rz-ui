@@ -25,9 +25,9 @@ jobs:
       - name: Install modules
         run: pnpm install
       - name: Run Test Coverage
-        run: cd packages/rz-ui-vue && pnpm coverage
+        run: pnpm coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          directory: packages/rz-ui-vue/coverage
+          directory: coverage
           token: ${{ secrets.CODECOV_TOKEN }}
