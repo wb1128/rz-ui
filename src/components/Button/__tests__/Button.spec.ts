@@ -1,51 +1,35 @@
-// import Button from '../Button'
+import { describe, test, expect } from 'vitest'
+import { mount } from '@vue/test-utils'
+import Button from '../Button.vue'
 
-// import { shallowMount } from '@vue/test-utils'
-// import { describe, expect, test } from 'vitest'
-// // 测试分组
-// describe('Button', () => {
-//   // mount
-//   test('mount  @vue/test-utils', () => {
-//     // @vue/test-utils  shallowMount 初始化组件
-//     const wrapper = shallowMount(Button, {
-//       slots: {
-//         default: 'Button'
-//       }
-//     })
+describe('Button.vue', () => {
+  test('basic button', () => {
+    const wrapper = mount(Button, {
+      props: {
+        type: 'primary'
+      },
+      slots: {
+        default: 'button'
+      }
+    })
+    expect(wrapper.classes()).toContain('rz-button--primary')
 
-//     // 断言
-//     expect(wrapper.text()).toBe('Button')
-//   })
-
-//   describe('color', () => {
-//     test('default', () => {
-//       const wrapper = shallowMount(Button, {
-//         slots: {
-//           default: 'Button'
-//         }
-//       })
-//       expect(
-//         wrapper
-//           .classes()
-//           .map((v) => v.replace('\n', ''))
-//           .includes('bg-blue-500')
-//       ).toBe(true)
-//     })
-//     test('red', () => {
-//       const wrapper = shallowMount(Button, {
-//         slots: {
-//           default: 'Button'
-//         },
-//         props: {
-//           color: 'red'
-//         }
-//       })
-//       expect(
-//         wrapper
-//           .classes()
-//           .map((v) => v.replace('\n', ''))
-//           .includes('bg-red-500')
-//       ).toBe(true)
-//     })
-//   })
-// })
+    expect(wrapper.get('button').text()).toBe('button')
+    wrapper.get('button').trigger('click')
+    expect(wrapper.emitted()).toHaveProperty('click')
+  })
+  test('disabled', () => {
+    const wrapper = mount(Button, {
+      props: {
+        disabled: true
+      },
+      slots: {
+        default: 'disabled'
+      }
+    })
+    // attributes
+    expect(wrapper.attributes('disabled')).toBeDefined()
+    wrapper.get('button').trigger('click')
+    expect(wrapper.emitted()).not.toHaveProperty('click')
+  })
+})
