@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 import { UserConfig, defineConfig } from 'vite'
+import { fileURLToPath, URL } from 'node:url'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
@@ -49,6 +50,11 @@ export const config = {
     coverage: {
       provider: 'istanbul', // or 'c8',
       reporter: ['text', 'json', 'html']
+    }
+  },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 }
