@@ -1,68 +1,29 @@
+---
+title: Button
+description: Button 组件的文档
+---
+
 # Button 按钮
 
-常用操作按钮
+常用的操作按钮。
 
 ## 基础用法
 
-基础的函数用法
-使用`size`、`color`、`pain`、`round`属性来定义 Button 的样式。
-:::demo
+使用 `type`、`plain`、`round` 和 `circle` 来定义按钮的样式。
 
-```vue
-<template>
-  <div style="margin-bottom:20px;">
-    <rz-button color="blue">主要按钮</rz-button>
-    <rz-button color="green">绿色按钮</rz-button>
-    <rz-button color="gray">灰色按钮</rz-button>
-    <rz-button color="yellow">黄色按钮</rz-button>
-    <rz-button color="red">红色按钮</rz-button>
-  </div>
-  <div style="margin-bottom:20px;">
-    <rz-button color="blue" plain>朴素按钮</rz-button>
-    <rz-button color="green" plain>绿色按钮</rz-button>
-    <rz-button color="gray" plain>灰色按钮</rz-button>
-    <rz-button color="yellow" plain>黄色按钮</rz-button>
-    <rz-button color="red" plain>红色按钮</rz-button>
-  </div>
-  <div style="margin-bottom:20px;">
-    <rz-button size="small" plain>小按钮</rz-button>
-    <rz-button size="medium" plain>中按钮</rz-button>
-    <rz-button size="large" plain>大按钮</rz-button>
-  </div>
-  <div style="margin-bottom:20px;">
-    <rz-button color="blue" round plain icon="search">搜索按钮</rz-button>
-    <rz-button color="green" round plain icon="edit">编辑按钮</rz-button>
-    <rz-button color="gray" round plain icon="check">成功按钮</rz-button>
-    <rz-button color="yellow" round plain icon="message">提示按钮</rz-button>
-    <rz-button color="red" round plain icon="delete">删除按钮</rz-button>
-  </div>
-  <div style="margin-bottom:20px;">
-    <rz-button color="blue" round plain icon="search"></rz-button>
-    <rz-button color="green" round plain icon="edit"></rz-button>
-    <rz-button color="gray" round plain icon="check"></rz-button>
-    <rz-button color="yellow" round plain icon="message"></rz-button>
-    <rz-button color="red" round plain icon="delete"></rz-button>
-  </div>
-</template>
-```
+<preview path="../demo/Button/Basic.vue" title="基础用法" description="Button 组件的基础用法"></preview>
 
-:::
+### Button Attributes
 
-## 图标按钮
-
-带图标的按钮可增强辨识度（有文字）或节省空间（无文字）。
-设置 icon 属性即可，icon 的列表可以参考 Element 的 icon 组件，也可以设置在文字右边的 icon ，只要使用 i 标签即可，可以使用自定义图标。
-:::demo
-
-```vue
-<template>
-  <div class="flex flex-row">
-    <rz-button icon="edit" plain></rz-button>
-    <rz-button icon="delete" plain></rz-button>
-    <rz-button icon="share" plain></rz-button>
-    <rz-button round plain icon="search">搜索</rz-button>
-  </div>
-</template>
-```
-
-:::
+| Name        | Description                            | Type                                                             | Default |
+| ----------- | -------------------------------------- | ---------------------------------------------------------------- | ------- |
+| size        | 	尺寸                            | `enum` - `'large'\| 'small'`                                     | —       |
+| type        | 	类型                            | `enum` - `'primary'\| 'success'\| 'warning'\| 'danger'\| 'info'` | —       |
+| plain       | 是否为朴素按钮  | `boolean`                                                        | false   |
+| round       | 是否为圆角按钮  | `boolean`                                                        | false   |
+| circle      | 是否为圆形按钮	 | `boolean`                                                        | false   |
+| loading     | 是否为加载中状态         | `boolean`                                                        | false   |
+| disabled    | 按钮是否为禁用状态	                     | `boolean`                                                        | false   |
+| icon        | 图标组件	                        | `string`                                                         | —       |
+| autofocus   | 原生 autofocus 属性	    | `boolean`                                                        | false   |
+| native-type | 原生 type 属性        | `enum` - `'button'\| 'submit'\| 'reset'`                         | button  |

@@ -18,6 +18,6 @@ features:
   - title: 计划1
     details: 先搭建整体
   - title: 计划2
-    details: 参考各大组件库以功能为主添加常见组件
+    details: 参考各大组件库添加常见组件
 ---
 

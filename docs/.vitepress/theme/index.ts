@@ -1,14 +1,15 @@
 import DefaultTheme from 'vitepress/theme'
-import Demo from 'vitepress-theme-demoblock/dist/client/components/Demo.vue'
-import DemoBlock from 'vitepress-theme-demoblock/dist/client/components/DemoBlock.vue'
-import 'vitepress-theme-demoblock/dist/theme/styles/index.css'
-import RzUI from '../../../src/entry'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { ElementPlusContainer } from '@vitepress-demo-preview/component'
+import '@vitepress-demo-preview/component/dist/style.css'
+import '../../../src/styles/index.css'
+import './custom.css'
 
+library.add(fas)
 export default {
   ...DefaultTheme,
-  enhanceApp(ctx) {
-    ctx.app.component('Demo', Demo)
-    ctx.app.component('DemoBlock', DemoBlock)
-    ctx.app.use(RzUI)
+  enhanceApp({ app }) {
+    app.component('demo-preview', ElementPlusContainer)
   }
 }

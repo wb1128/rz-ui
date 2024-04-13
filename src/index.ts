@@ -1,16 +1,17 @@
 import { createApp } from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import Button from './components/Button/Button.vue'
 import App from './App.vue'
-
 import './styles/index.css'
+import Button from './components/Button/Button.vue'
+import Icon from './components/Icon/Icon.vue'
 
 library.add(fas)
 const RzUI = {
   install(app: any) {
     // 注册组件
     app.component(Button.name, Button)
+    app.component(Button.name, Icon)
   }
 }
 // 单独导出组件

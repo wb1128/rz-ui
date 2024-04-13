@@ -31,6 +31,8 @@
     "@types/lodash-es": "^4.17.12",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.2.3",
     "@vitest/coverage-istanbul": "^1.2.1",
     "@vitest/coverage-v8": "^1.2.1",
     "@vue/eslint-config-prettier": "^9.0.0",
@@ -52,8 +54,7 @@
     "prettier": "^3.1.1",
     "vite": "^5.2.8",
     "vite-plugin-dts": "^3.7.2",
-    "vitepress": "1.0.0-rc.32",
-    "vitepress-theme-demoblock": "^3.0.3",
+    "vitepress": "1.1.0",
     "vitest": "^1.1.0"
   },
   "dependencies": {
