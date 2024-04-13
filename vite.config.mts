@@ -2,7 +2,7 @@
 import { UserConfig, defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
-import Unocss from './config/unocss'
+import vue from '@vitejs/plugin-vue'
 
 export const config = {
   build: {
@@ -28,9 +28,8 @@ export const config = {
     outDir: './dist'
   },
   plugins: [
+    vue(),
     vueJsx(),
-    // 添加UnoCSS插件
-    Unocss(),
     dts({
       outDir: './dist/types',
       insertTypesEntry: false, // 插入TS 入口
