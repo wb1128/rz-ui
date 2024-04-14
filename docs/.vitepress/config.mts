@@ -23,7 +23,10 @@ export default defineConfig({
       },
       {
         text: '基础组件',
-        items: [{ text: 'Button', link: '/components/button' }]
+        items: [
+          { text: 'Button', link: '/components/button' },
+          { text: 'Collapse', link: '/components/collapse' }
+        ]
       }
     ],
 

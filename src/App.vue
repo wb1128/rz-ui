@@ -3,7 +3,7 @@
     <Button ref="buttonRef">Test Button</Button>
     <Button plain>Plain Button</Button>
     <Button round>Round Button</Button>
-    <Button circle>VK</Button>
+    <Button circle>circle</Button>
     <Button disabled>Disabled Button</Button><br /><br />
     <Button type="primary">Primary</Button>
     <Button type="success">Success</Button>
