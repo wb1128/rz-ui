@@ -20,6 +20,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[handlebars]": { "editor.formatOnSave": false },
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
   "editor.snippetSuggestions": "top",

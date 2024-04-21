@@ -1,0 +1,16 @@
+.rz-icon {
+  --rz-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--rz-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .rz-icon--$(val) {
+    --rz-icon-color: var(--rz-color-$(val));
+  }
+}
