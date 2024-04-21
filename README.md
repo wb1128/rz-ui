@@ -11,7 +11,7 @@
     <a href="https://github.com/wb1128/rz-ui/actions/workflows/main.yml"><img src="https://github.com/wb1128/rz-ui/actions/workflows/main.yml/badge.svg?branch=main" alt="CI" style="max-width: 100%;"></a>
 </p>
 
-[![codecov](https://codecov.io/gh/wb1128/rz-ui/graph/badge.svg?token=LG30RJKSY2)](https://codecov.io/gh/wb1128/rz-ui)
+<!-- [![codecov](https://codecov.io/gh/wb1128/rz-ui/graph/badge.svg?token=LG30RJKSY2)](https://codecov.io/gh/wb1128/rz-ui) -->
 
 ## Features
 
@@ -27,7 +27,7 @@
 
 ## Quick Start
 
-希望尽快上手 Smarty-UI，可以浏览 [Getting Started](https://rz-ui-docs.vercel.app/).
+希望尽快上手 RzUI，可以浏览 [Getting Started](https://rz-ui-docs.vercel.app/).
 
 ## Browser Support
 

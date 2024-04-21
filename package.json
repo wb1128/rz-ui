@@ -1,10 +1,30 @@
 {
   "name": "rz-ui-vue",
   "version": "1.0.3",
-  "description": "",
-  "main": "./dist/rz-ui.mjs",
-  "module": "./dist/rz-ui.mjs",
+  "description": "Vue3 components library",
   "homepage": "https://rz-ui-docs.vercel.app/",
+  "keywords": [],
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": ["dist/index.css"],
+  "main": "./dist/umd/rz-ui.umd.cjs",
+  "module": "./dist/es/rz-ui.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/es/rz-ui.js",
+      "require": "./dist/umd/rz-ui.umd.cjs",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "test": "vitest",
@@ -12,17 +32,16 @@
     "coverage": "vitest run --coverage",
     "lint": "eslint --fix --ext .ts,.vue,.tsx src --format=pretty",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
-    "build": "pnpm build:components",
-    "build:all": "vite build",
-    "build:components": "esno ./scripts/build.ts",
+    "build": "npm run build-only && npm run move-style",
+    "build-only": "run-p build-es build-umd",
+    "build-umd": "vite build --config vite.umd.config.ts",
+    "build-es": "vite build --config vite.es.config.ts",
+    "move-style": "move-file dist/es/index.css dist/index.css",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "preinstall": "npx only-allow pnpm"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
@@ -46,6 +65,8 @@
     "handlebars": "^4.7.8",
     "happy-dom": "^12.10.3",
     "husky": "^8.0.3",
+    "move-file-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
     "postcss-color-mix": "^1.1.0",
     "postcss-each": "^1.1.0",
     "postcss-each-variables": "^0.3.0",
@@ -55,14 +76,17 @@
     "vite": "^5.2.8",
     "vite-plugin-dts": "^3.7.2",
     "vitepress": "1.1.0",
-    "vitest": "^1.1.0"
+    "vitest": "^1.1.0",
+    "vue": "3.4.21"
+  },
+  "peerDependencies": {
+    "vue": "3.4.21"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.6",
     "@popperjs/core": "^2.11.8",
-    "lodash-es": "^4.17.21",
-    "vue": "3.4.21"
+    "lodash-es": "^4.17.21"
   }
 }

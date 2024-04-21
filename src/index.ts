@@ -1,23 +1,28 @@
-import { createApp } from 'vue'
+import { App } from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import App from './App.vue'
-import './styles/index.css'
 import Button from './components/Button/Button.vue'
 import Icon from './components/Icon/Icon.vue'
+import Collapse from './components/Collapse/Collapse.vue'
+import CollapseItem from './components/Collapse/CollapseItem.vue'
+import Dropdown from './components/Dropdown/Dropdown.vue'
+import Tooltip from './components/Tooltip/Tooltip.vue'
+import Message, { createMessage, closeAll as closeMessageAll } from './components/Message/index'
+
+import './styles/index.css'
 
 library.add(fas)
-const RzUI = {
-  install(app: any) {
-    // 注册组件
-    app.component(Button.name, Button)
-    app.component(Button.name, Icon)
-  }
+
+const components = [Button, Collapse, CollapseItem, Dropdown, Icon, Message, Tooltip]
+
+const install = (app: App) => {
+  components.forEach((compoment) => {
+    app.component(compoment.name, compoment)
+  })
 }
-// 单独导出组件
-export { Button }
 
-// 编写一个插件实现install方法
-export default RzUI
+export { install, Button, Collapse, CollapseItem, Dropdown, Icon, Message, Tooltip, createMessage, closeMessageAll }
 
-createApp(App).mount('#app')
+export default {
+  install
+}
